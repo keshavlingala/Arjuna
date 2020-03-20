@@ -23,7 +23,7 @@ public class ShippingGold {
         }
         int count = 0;
         for (int i = startingPoint; i < x.length; i++) {
-            if (x[i] == false) {
+            if (!x[i]) {
                 count++;
             }
         }
