@@ -40,11 +40,22 @@ import java.util.Scanner;
 public class ZAlgo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine().trim();
-        int[] z = zAlgorithm(s);
-        System.out.println(Arrays.toString(z));
-        System.out.println(Arrays.stream(z).sum() + s.length());
+        System.out.println(Arrays.toString(zAlgorithm("ginnestinggin gniinginging$gni")));
 
+    }
+
+    static void printPermutn(String str, String ans) {
+
+        if (str.length() == 0) {
+            System.out.print(ans + " ");
+            return;
+        }
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            String ros = str.substring(0, i) +
+                    str.substring(i + 1);
+            printPermutn(ros, ans + ch);
+        }
     }
 
     static int[] zAlgorithm(String s) {

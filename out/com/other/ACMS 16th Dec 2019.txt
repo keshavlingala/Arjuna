@@ -1,0 +1,431 @@
+
+1) Which one of the following is an application of Queue Data Structure?
+
+A) When a resource is shared among multiple consumers.
+B) When data is transferred asynchronously (data not necessarily received 
+     at same rate as sent) between two processes
+C) Load Balancing
+D) All of these
+
+
+Ans- D
+
+
+
+
+
+2)
+void fun(int n) 
+{ 
+	Stack S; // Say it creates an empty stack S 
+	while (n > 0) 
+	{ 
+	// This line pushes the value of n%2 to stack S 
+	push(&S, n%2); 
+
+	n = n/2; 
+	} 
+
+	// Run while Stack S is not empty 
+	while (!isEmpty(&S)) 
+	printf("%d ", pop(&S)); // pop an element from S and print it 
+} 
+
+
+What does the above function do in general?
+(A) Prints binary representation of n in reverse order
+(B) Prints binary representation of n
+(C) Prints the value of Logn
+(D) Prints the value of Logn in reverse order
+
+
+Answer: (B) 
+
+
+
+
+3)
+
+A priority queue can efficiently be implemented using which of the following data structures? 
+
+Assume that the number of insert and peek (operation to see the current highest priority item) and 
+extraction (remove the highest priority item) operations are almost same.
+
+A) Array
+B) Linked List
+C) Heap Data Structures
+D) None of these
+
+
+Answer: (C)
+
+
+
+4) What is the worst case time complexity for search, insert and delete operations in a general Binary Search Tree?
+A) O(n) for all
+B) O(Logn) for all
+C) O(Logn) for search and insert, and O(n) for delete
+D) O(Logn) for search, and O(n) for insert and delete
+
+
+Answer: (A)
+
+
+
+
+5)The preorder traversal sequence of a binary search tree is 30, 20, 10, 15, 25, 23, 39, 35, 42.
+Which one of the following is the postorder traversal sequence of the same tree?
+
+A) 10, 20, 15, 23, 25, 35, 42, 39, 30
+B) 15, 10, 25, 23, 20, 42, 35, 39, 30
+C) 15, 20, 10, 23, 25, 42, 35, 39, 30
+D) 15, 10, 23, 25, 20, 35, 42, 39, 30
+
+
+Answer: (D)
+
+
+
+
+6)In a binary max heap containing n numbers, the largest element can be found in time 
+
+A) 0(n)
+B) O(logn)
+C) 0(loglogn)
+D) 0(1)
+
+
+Answer: D
+
+
+
+7)#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+	int a[]={10,20,30,40,50};
+	int *p=a;
+	int i;
+   for(i=0;i<3;i++)
+	{
+	    p=p+i;
+	}
+	printf(" %d ",p[-1]);
+	return 0;
+}
+
+
+What will the above code print 
+
+A) Compilation fails
+B) Some Garbage value
+C) Run time Error
+D) None of these
+
+
+Ans - D 
+Will print 30
+
+
+
+8)
+
+#include<stdio.h> 
+  
+int main() 
+{  
+    int a = 7;
+    int *p ; 
+    p = &a; 
+    a = *p * 7; 
+    printf("%d %d", a, *p); 
+  
+    return 0; 
+} 
+
+A) compilation fails
+B) 7 49
+C) 49 7
+D) 49 49
+
+
+
+Ans - D
+
+
+
+
+9)#include<stdio.h> 
+  
+int main() 
+{ 
+    int i = 6, *j, k; 
+    j = &i; 
+    printf("%d\n", i**j*(i+*j));  
+    return 0; 
+} 
+
+  
+  A) Compilation fails
+  B) 222
+  C) 432
+  D) None of these
+
+
+  Ans - C
+
+
+
+
+  10) What Is The Output Of this program?
+
+#include <stdio.h> 
+int main() 
+{ 
+    unsigned int i = 0x80; 
+    printf("%d ", i << 1); 
+    return 0; 
+} 
+
+a) 0
+b) 256
+c) 100
+d) 80
+
+
+ans :- b
+
+
+11)
+#include <stdio.h> 
+int main() 
+{ 
+    int x; 
+    x = 3 > 6 ? 8 : 3 != 2 < 3 ? 20 : 30; 
+    printf("%d", x); 
+    return 0; 
+} 
+
+
+A) Compilation fails
+B) 30
+C) 20
+D) 8
+
+
+
+Ans-C
+
+
+
+
+12) 	
+
+What does the following declaration mean?
+int (*ptr)[10];
+A. 	ptr is array of pointers to 10 integers
+B. 	ptr is a pointer to an array of 10 integers
+C. 	ptr is an array of 10 integers
+D. 	ptr is an pointer to array
+
+
+Answer: B
+
+
+
+
+13)int main() 
+{ 
+    int i; 
+    if(i=(0,2,3) )
+        printf("AMCS "); 
+    else
+        printf("ACMS "); 
+    printf("%d\n",i); 
+} 
+
+
+A) AMCS 0
+B) AMCS 3
+C) ACMS 0
+D) ACMS 3
+E) Compilation fails
+
+
+Ans- B
+
+
+
+14)
+
+#include<stdio.h>
+int main()
+{
+    static int a[2][2] = {1, 2, 3, 4};
+    int i, j;
+    static int *p[] = {(int*)a, (int*)a+1, (int*)a+2};
+    for(i=0; i<2; i++)
+    {
+        for(j=0; j<2; j++)
+        {
+            printf("%d, %d, %d, %d\n", *(*(p+i)+j), *(*(j+p)+i), *(*(i+p)+j), *(*(p+j)+i));
+        }
+    }
+    return 0;
+}
+
+A.
+1, 1, 1, 1
+2, 3, 2, 3
+3, 2, 3, 2
+4, 4, 4, 4
+B. 
+1, 2, 1, 2
+2, 3, 2, 3
+3, 4, 3, 4
+4, 2, 4, 2
+C.
+1, 1, 1, 1
+2, 2, 2, 2
+2, 2, 2, 2
+3, 3, 3, 3
+D.
+1, 2, 3, 4
+2, 3, 4, 1
+3, 4, 1, 2
+4, 1, 2, 3
+
+Answer: Option C
+
+
+
+15) class Test 
+{
+	public static void main(String[] args) 
+	{
+	String s1 = " yes" ;
+       String s2 = " yes " ;
+        String s3 = new String ( s1);
+	System.out.println((s1==s2)+ "  "+ (s1=s2) + "  "+(s3==s1)+"  "+(s3=s1)+"  "+ (s1!=s2));
+	}
+}
+
+
+A) false   yes   false   yes   false
+B)  true   yes   true   yes   false
+C)   true   yes   true   yes   true
+D)  false   yes   true   yes   true
+
+
+Ans- A
+
+
+
+
+16) 
+output of the following statement in java
+System.out.println(13&25);
+
+A) 38 
+B) 25 
+C) 9
+D) 12
+E) 21
+
+
+Ans - c
+
+
+
+17)
+class Test 
+{ 
+    public static void main(String[] args) 
+    { 
+        try
+        { 
+            System.out.println(1/0); 
+        } finally { }
+    } 
+} 
+
+
+A) Compiles fine and results in Arithemitc Exception
+B) Compilation fails
+C) Compiles fine and prints some value
+D) None of these
+
+
+
+Ans - A
+
+
+
+
+18)
+
+class Test {
+private Test() {
+     System.out.println("Test Called");
+}
+   public static void main(String[] args) 
+    { 
+            Test t =new Test();
+    } 
+}
+
+A) Compilation fails
+B) Run Time error
+C) Prints Test Called 
+D) None of these
+
+
+Ans- C
+
+19) output of the following code
+
+class Test
+{
+	public static void main(String[] args){
+	String[] arr={"A", "B","C","D"};
+	for(int i=0; i<arr.length;i++){
+		System.out.print(arr[i]+" ");
+	    if(arr[i].equals("C") ){
+		   continue;
+		}
+		System.out.print(" Work done");
+		break;
+	}
+}
+}
+what is the result?
+
+a)  A B C Work done
+b)  A B C D Work done
+c)  A Work done
+d) Compilation fails
+
+
+
+
+Answer: C
+
+
+
+
+20) class Test {
+public static void main(String [] args) {
+int x=1;
+if(x)
+        System.out.println("A");  
+else
+      System.out.println("B");  
+}
+}
+a)	A
+b)	B
+c)	Compilation fails
+d)	Run time exception
+
+
+Ans:  C
