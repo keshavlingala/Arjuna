@@ -1,0 +1,50 @@
+/*
+ * 
+Write a Program to find the common string(s) of 2 arrays of strings.
+ 
+
+Input:ram Laxman krishna
+ram Seetha raju
+
+Output: ram
+
+Explanation :
+First line of input represents strings(without space) array 1
+Second line of input represents strings(without space) array 2
+output is common strings between two array i.e ram.
+length of 2 arrays of strings can be different also.
+
+*/
+
+package Elite2020;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class IntersectionArrays {
+
+	public static void main(String[] args)  throws IOException
+    { 
+   	 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		
+		String[] firstArray = str.split(" ");
+		str = br.readLine();
+		
+		String[] secondArray = str.split(" ");
+	     
+	    HashSet<String> set = new HashSet<>(); 
+	     
+	    set.addAll(Arrays.asList(firstArray));
+	     
+	    set.retainAll(Arrays.asList(secondArray));
+	    
+	    String[] intersection = {};
+	    intersection = set.toArray(intersection);
+	     
+	    System.out.println(Arrays.toString(intersection));
+	  }
+	
+}
